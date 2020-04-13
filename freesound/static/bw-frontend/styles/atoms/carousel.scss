@@ -18,7 +18,13 @@
 .bw-carousel-icon {
   position: absolute;
   top: 50%;
-  opacity: 0;
+  opacity: 1;
+
+  @include md-and-above {
+    // on md+, carousel icons are visible only on hover
+    opacity: 0;
+  }
+
   transition: opacity 0.2s ease-in-out;
   background: $white;
   border-radius: 50%;
@@ -28,6 +34,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-size: 12px;
+
+  &:hover,
+  &:focus {
+    color: $red;
+  }
 }
 
 .carousel-right {

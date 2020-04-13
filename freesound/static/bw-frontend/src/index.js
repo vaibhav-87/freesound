@@ -5,6 +5,7 @@ import 'whatwg-fetch'
 import 'classlist-polyfill'
 import 'element-closest'
 import 'normalize.css'
+import 'tippy.js/dist/tippy.css';
 
 import '../styles/index.scss'
 

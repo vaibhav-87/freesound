@@ -2,7 +2,7 @@ import './page-polyfills'
 import throttle from 'lodash.throttle'
 import navbar from '../components/navbar'
 import { addTypeAheadFeatures } from '../components/typeahead'
-import wait from '../utils/wait'
+import tippy from 'tippy.js'
 
 const heroSearch = document.getElementsByClassName('bw-front__hero-search')[0]
 
@@ -34,3 +34,8 @@ const fetchSuggestions = async query => {
 }
 
 addTypeAheadFeatures(input, fetchSuggestions)
+
+
+tippy('#sound-of-the-day-carousel .carousel-right', {
+  content: 'Guess a new sound'
+})
