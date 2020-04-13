@@ -67,7 +67,11 @@
 
   button:focus {
     outline: none;
-    color: $black;
+  }
+
+  button:hover,
+  button:focus {
+    color: $red;
   }
 
   &.bw-player__controls--big {
