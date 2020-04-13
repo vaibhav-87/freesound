@@ -82,6 +82,7 @@ const createProgressStatus = (audioElement, playerSize) => {
   const progressStatus = document.createElement('div')
   progressStatus.className = 'bw-player__progress'
   const durationIndicator = document.createElement('span')
+  durationIndicator.classList.add('duration-indicator')
   const progressIndicator = document.createElement('span')
   progressIndicator.classList.add('hidden')
   if (playerSize === 'big') {

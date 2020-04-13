@@ -71,11 +71,16 @@ const onPlayerTimeUpdate = (audioElement, parentNode) => {
   const progressStatus = parentNode.getElementsByClassName(
     'bw-player__progress'
   )[0]
-  const progressIndicator = [...progressStatus.childNodes][1]
+  const playerSize = parentNode.dataset.size
+  const isUsingDurationIndicatorAsTimer = playerSize !== 'big'
+  const progressIndicator = [...progressStatus.childNodes][
+    isUsingDurationIndicatorAsTimer ? 0 : 1
+  ]
   const { duration, currentTime } = audioElement
   const didReachTheEnd = duration === currentTime
+  const durationAtReset = isUsingDurationIndicatorAsTimer ? duration : 0
   // reset progress at the end of playback
-  const timeElapsed = didReachTheEnd ? 0 : currentTime
+  const timeElapsed = didReachTheEnd ? durationAtReset : currentTime
   const progress = playerSettings.showRemainingTime
     ? duration - timeElapsed
     : timeElapsed
