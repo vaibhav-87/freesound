@@ -105,3 +105,5 @@ In most situations it is possible that not all Freesound services need to be run
 You can run tests using the Django test runner in the `web` container like that:
 
     docker-compose run --rm web python manage.py test --settings=freesound.test_settings
+    
+    Thanks for Reading, Keep Coding. 
